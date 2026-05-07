@@ -2,7 +2,111 @@
 // DICIONÁRIOS
 // Guardam uma estrutura de chave => valor
 
-TrabalhandoComDictionary();
+//TrabalhandoComDictionary();
+//NotasAlunos();
+//InventarioJogo();
+TarefasSprint();
+
+void TarefasSprint()
+{
+    // Inicialize um dicionário com algumas tarefas
+    // Remova todas as tarefas do dicionário
+    // Adicione novas tarefas
+    // Liste as novas tarefas
+
+    Dictionary<string, string> tarefas = new Dictionary<string, string>()  
+    {  
+        { "Refatorar módulo de login", "Ana" },  
+        { "Testar API de pagamentos", "Pedro" }  
+    };
+
+    System.Console.WriteLine("Lista de tarefas da sprint 1: \n");
+
+    foreach(var tarefa in tarefas)
+    {
+        System.Console.WriteLine($"Tarefa: {tarefa.Key} ({tarefa.Value})");
+    }
+
+    tarefas.Clear();
+
+    tarefas.Add("Implementar autenticação OAuth", "João");  
+    tarefas.Add("Otimizar consultas SQL", "Maria");  
+    tarefas.Add("Atualizar documentação", "Carlos");
+
+    System.Console.WriteLine("Lista de tarefas da sprint 2: \n");
+
+    foreach(var tarefa in tarefas)
+    {
+        System.Console.WriteLine($"Tarefa: {tarefa.Key} ({tarefa.Value})");
+    }
+}
+
+
+void InventarioJogo()
+{
+    // Inicialize um dicionário com itens.
+    // Remova um item específico do inventário.
+    // Adicione um novo item ao inventário.
+    // Exiba a lista atualizada de itens.
+
+    Dictionary<int, string> inventario = new Dictionary<int, string>()
+        {
+            { 1, "Espada Longa" },
+            { 2, "Arco Curto" },
+            { 3, "Escudo de Ferro" }
+        };
+
+    System.Console.WriteLine("Itens do inventário: \n");
+
+    foreach (var item in inventario)
+    {
+        System.Console.WriteLine($"ID: {item.Key} - {item.Value} \n");
+    }
+
+    inventario.Remove(2);
+
+    System.Console.WriteLine("Itens do inventário: \n");
+
+    foreach (var item in inventario)
+    {
+        System.Console.WriteLine($"ID: {item.Key} - {item.Value} \n");
+    }
+
+    inventario.Add(4, "Poção de Vida");
+
+    System.Console.WriteLine("Itens do inventário: \n");
+
+    foreach (var item in inventario)
+    {
+        System.Console.WriteLine($"ID: {item.Key} - {item.Value} \n");
+    }
+
+
+
+}
+
+void NotasAlunos()
+{
+    // Declare um dicionário com as informações de nome e nota de cada aluno
+    // Use um loop para iterar sobre essas notas
+    // Exiba as notas na tela
+
+    Dictionary<string, double> alunosNotas = new Dictionary<string, double>
+    {
+      { "Gustavo", 8.75 },
+      { "Amanda", 10 },
+      { "Evelyn", 11.5 },
+      { "Miguel", 15 }
+    };
+
+    foreach(KeyValuePair<string, double> alunoNota in alunosNotas)
+    {
+        System.Console.WriteLine($"O aluno {alunoNota.Key} tem nota: {alunoNota.Value}");
+    }
+
+
+
+}
 
 void TrabalhandoComDictionary()
 {
@@ -14,9 +118,14 @@ void TrabalhandoComDictionary()
         { 6356984, "Teclado" },
         { 8647921, "Mouse" }
     };
-
     produtos.Add(789456, "Placa de Vídeo");
-
+    System.Console.WriteLine(produtos[2456987]);
+    Dictionary<string, string> palavras = new Dictionary<string, string>
+    {
+        { "Olá", "Hello" },
+        { "Mundo", "World" }
+    };
+    System.Console.WriteLine($"A tradução de olá é: {palavras["Olá"]}");
 }
 
 
